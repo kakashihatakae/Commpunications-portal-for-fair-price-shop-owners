@@ -1,0 +1,39 @@
+body{
+    background-color: rgba(69, 54, 71, 1);
+}
+
+.Form{
+    display: flex;
+    grid-template-rows: repeat(3, auto);
+    flex-direction: column;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    grid-gap:2em;
+    width: 80%;
+}
+
+.label{
+   color: rgb(106, 76, 109); 
+   background-color: rgb(243, 236, 168);
+   padding: 6px 10px;
+   border-radius: 3px;
+}
+
+.button{
+    color:rgb(59, 43, 54);
+    padding:8px 30px;
+    background-color: rgb(194, 107, 118);
+    border-radius: 8px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: rgb(221, 203, 206);
+    transition-duration: 0.2s;
+}
+
+.text-box{
+    border-radius: 5px;
+}

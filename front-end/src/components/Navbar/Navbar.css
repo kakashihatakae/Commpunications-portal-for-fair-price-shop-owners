@@ -1,0 +1,64 @@
+.NavbarItems{
+    background-color: rgba(104, 87, 107, 0.9);
+    height: 5em;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 2em;
+    width: 50%;
+    margin-right: 3em;
+    justify-content: center;
+
+}
+
+.navbar-logo a{
+    color:rgb(219, 188, 188);
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.nav-links{
+    color:rgb(229, 236, 190);
+    text-decoration: none;
+    cursor: pointer;
+    justify-content: flex-end;
+    padding: 10px 10px;
+}
+
+.nav-links:hover{
+    background-color: rgba(238, 243, 196, 0.5);
+    border-radius: 3px;
+    transition: all 0.2s ease-out;
+    transition: 200ms;
+}
+
+.SignIn{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(198, 199, 145, 0.3);
+    border-radius: 3px;
+    padding: 10px 10px ;
+    width: 20px;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.clear{
+    display: none;
+}
+.dropdown{
+    display: clear;
+}
+
+
