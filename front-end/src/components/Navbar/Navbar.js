@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
+import '../Profiles/Profiles'
+import '../Message/Message'
 
 function Navbar_func() {
     const [mobile, func_mobile] = useState(1)
@@ -24,7 +26,7 @@ function Navbar_func() {
             <ul className="nav-menu">
                 <li><a className="nav-links" href="/">Home</a></li>
                 <li><a className="nav-links" href='/send-messages'>Send Message</a></li>
-                <li><a className="SignIn" href='/signin'>Signin</a></li>
+                <li><a className="SignIn" href='../Profiles'>Signin</a></li>
             </ul>
 
         </nav>
