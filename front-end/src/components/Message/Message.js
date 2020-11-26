@@ -33,7 +33,6 @@ function Message(props) {
         })
     }, [Button])
 
-
     return (
         <form onSubmit={handleSubmit} className='Form'>
 
