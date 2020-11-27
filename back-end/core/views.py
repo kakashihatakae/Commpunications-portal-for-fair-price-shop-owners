@@ -21,15 +21,17 @@ class ReactView(APIView):
     
     def post(self, request):
         serializer = ReactSerializer(data=request.data)
-
+        
         print('------------------------------------------')
         print(request.data['number'])
         print('------------------------------------------')
 
-        message = self.client.messages.create(to = '+1'+request.data['number'], from_=self.fromm, body = request.data['message'])
-        print(message.sid)
+        # message = self.client.messages.create(to = '+1'+request.data['number'], from_=self.fromm, body = request.data['message'])
+        # print(message.sid)
         if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
+            print(serializer.data)
+        #     serializer.save()
+        #     print(serializer.data)
+        #     return Response(serializer.data)
 
 
