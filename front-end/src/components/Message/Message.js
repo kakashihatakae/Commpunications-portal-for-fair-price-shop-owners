@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState, useRef} from 'react'
 import './Message.css'
 import axios from 'axios';
 
@@ -7,6 +7,8 @@ function Message(props) {
     const [Number, setNumber] =useState("");
     const [Button, setButton] = useState({})
     const [File, setFile] = useState({csvfile:null})
+    const file_ref = useRef()
+
     const form_data = new FormData()
 
     const handleSubmit = (evt) =>{
@@ -32,7 +34,9 @@ function Message(props) {
             // console.log(res.data)
             setNumber("")
             setMessage("")
+            file_ref.current.value = ''
             setFile({csvfile:null})
+
         })
         .catch(err => {
             console.log(err)
@@ -51,7 +55,8 @@ function Message(props) {
                 <textarea value = {Message} onChange={e=>setMessage(e.target.value)} className='text-box'/>
 
                 <input type ="text" value = {Number} onChange={d=>setNumber(d.target.value)} className='number-box'/>
-                <input type = "file" label="upload csv" onChange={e=>setFile({csvfile:e.target.files[0]})} className='file-upload'/>
+                <input type = "file" label="upload csv" onChange={e=>setFile({csvfile:e.target.files[0]})} 
+                ref={file_ref} className='file-upload'/>
 
             <button type='submit' className='button'>
                 submit

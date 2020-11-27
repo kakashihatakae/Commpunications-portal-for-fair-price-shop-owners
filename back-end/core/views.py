@@ -27,7 +27,7 @@ class ReactView(APIView):
         serializer = ReactSerializer(data=request.data)
         
         print('------------------------------------------')
-        print(request.data['number'])
+        print(request.data['file'])
         print('------------------------------------------')
 
         # for family in React.objects.all():
@@ -35,9 +35,7 @@ class ReactView(APIView):
         # message = self.client.messages.create(to = '+1'+request.data['number'], from_=self.fromm, body = request.data['message'])
         # print(message.sid)
         if serializer.is_valid(raise_exception=True):
-            print(serializer.data)
-        #     serializer.save()
-        #     print(serializer.data)
-        #     return Response(serializer.data)
+            serializer.save()
+            return Response(serializer.data)
 
 
