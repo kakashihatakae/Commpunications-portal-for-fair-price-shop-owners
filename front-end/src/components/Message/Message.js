@@ -7,11 +7,12 @@ function Message(props) {
     const [Number, setNumber] =useState("");
     const [Button, setButton] = useState({})
     const [File, setFile] = useState({csvfile:null})
+    const form_data = new FormData()
 
     const handleSubmit = (evt) =>{
         // alert(`Are you sure you want to send this message? \n ${name} \n `);
         const r = window.confirm('Are you sure about this?');
-        console.log(File.csvfile);
+        console.log(File);
         if(r === true){
             setButton({'number':Number, 'message':Message, 'file':File.csvfile})
             console.log(Button)
@@ -21,9 +22,14 @@ function Message(props) {
     }
 
     useEffect(() => {
-        axios.post('http://127.0.0.1:8000/wel/', Button)
+        form_data.append('number', Button.number)
+        form_data.append('message', Button.message)
+        form_data.append('file', Button.file)
+        // console.log(form_data.entries())
+
+        axios.post('http://127.0.0.1:8000/wel/', form_data)
         .then(function(res){
-            console.log(res.data)
+            // console.log(res.data)
             setNumber("")
             setMessage("")
             setFile({csvfile:null})

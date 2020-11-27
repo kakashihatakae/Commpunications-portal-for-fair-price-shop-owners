@@ -19,15 +19,29 @@ class ReactView(APIView):
 
         return Response(detail1)
     
+    # def upload_csv(self, request):
+
+
     def post(self, request):
+        print(request.data)
         serializer = ReactSerializer(data=request.data)
+
+        number = request.data['number']
+        message = request.data['message']
+        # csv_file = request.data['file']
+        # file_data = csv_file.read().decode("utf-8")	
+        # lines = file_data.split("\n")
+
+        # print(lines)
 
         print('------------------------------------------')
         print(request.data['number'])
         print('------------------------------------------')
 
-        message = self.client.messages.create(to = '+1'+request.data['number'], from_=self.fromm, body = request.data['message'])
-        print(message.sid)
+        # for family in React.objects.all():
+        #     print(family.message, family.number)
+        # message = self.client.messages.create(to = '+1'+request.data['number'], from_=self.fromm, body = request.data['message'])
+        # print(message.sid)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
